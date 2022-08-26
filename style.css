@@ -1,0 +1,308 @@
+/*im gonna be using google font for the fonts its free xD xD*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
+/*importing poppins font*/
+
+
+
+/*
+i took the icons from boxicons 
+link :boxicons.com
+*/
+
+:root {
+    /*root the way to declare variables 
+    i did for the colors so you can change the colors from here 
+    they use this methode for dark mode btw 
+    */
+    --main-color: #be926d;
+    --second-color:#FFBE88;
+    --navbar-textarea:#C8B1A4;
+  }
+
+*{
+    margin: 0;   /*margin and padding alwys 0 in * so you can take all the page default is 5 i guess (not sure)*/
+    padding: 0;
+    box-sizing: border-box;   /*check this :https://developer.mozilla.org/fr/docs/Web/CSS/box-sizing*/
+    scroll-behavior: smooth;  /*try to disable it to understand the when y click the links the scroll is with no animation (not smooth)*/
+    scroll-padding-top: 32px; /*so when we scroll you still see the page check this :https://developer.mozilla.org/fr/docs/Web/CSS/scroll-padding-top*/
+    list-style: none;
+    text-decoration: none; /*list and text decor are none so we can change to wut we need list style defalut is and ugly point */
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+section{
+    padding: 50px 10%;
+}
+
+header{
+    position: fixed; /*dont move while scrolling*/
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000; /*big number in z index so it always in top of any layer*/
+    display: flex;   /*check this :https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 100px;
+    background: var(--navbar-textarea);
+}
+
+#logo{
+    width: 10%; /*when you change the logo change this*/
+}
+
+.navbar{
+    position: relative;
+    display: flex;  /*for display types check this one :https://css-tricks.com/almanac/properties/p/position/*/
+}
+.navbar a{
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 500; /*font weight is like gholdiya ta3 text the more ykon kbir the more its bold*/
+    color: black;
+}
+.navbar a:hover{
+    color: #fff;
+}
+#menu-icon{
+    font-size: 32px;
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+    width: 100%;
+    min-height: 100vh; /*so it will alwyas take 100 of the height page*/
+    background-image: url(images/background-home.jpg);
+    background-repeat: no-repeat; /*when bg is small the images goes for repeating to fill the page*/
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed; /*when you scroll elements move but never the bg*/
+    display: flex;
+    align-items:center ;
+}
+
+.home-text h1{
+    font-size: 40px;
+}
+
+.home-text p{
+    font-size: 14px;
+    margin: 5px 0 14px;
+    
+}
+
+.home-text span{
+    color: var(--main-color);
+}
+
+.btn{
+    padding: 10px 14px;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn:hover{
+    background:var(--second-color);
+}
+
+.heading {
+    text-align: center;
+  }
+  .heading span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--main-color);
+    text-transform: uppercase;
+  }
+  .shop-container,
+  .new-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto)); 
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .box {
+    position: relative;
+    box-shadow: 1px 4px 4px rgb(0, 0, 0, 0.1); /*shadow effect*/
+    border-radius: 44px 4px 4px 4px;  /*radius in the 4 corners*/
+  }
+  .box .box-img {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;  /*when the pic is bigger than its container there is an overflow we dont need this shit */
+    border-radius: 44px 4px 0 0;
+  }
+  .box .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .box .box-img img:hover {
+    transform: scale(1.2); /*zoom in effect with animation time 0,6*/
+    transition: 0.7s;
+  }
+ 
+
+.title_price{
+display: flex;
+justify-content: space-between;
+padding: 12px;
+}
+
+.title_price h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.box span{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 12px;  /*padding and margin are spacing near the object the diff between them is one is from inside other form outside*/
+    color: var(--main-color);
+}
+
+.box .bx-cart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 7px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 4px 0 4px 0;
+    background: var(--main-color) ;
+    cursor: pointer;
+}
+
+.box .bx-cart:hover {
+    background: var(--second-color);
+  }
+
+ .new-container .box {
+    border-radius: 4px;
+  }
+ .new-container .box .box-img {
+    border-radius: 4px;
+  }
+  
+
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /*2col 1 row 
+  2 col: pic and div  */
+  gap: 16px;
+}
+
+.about-img img {
+  width: 80%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.about-text span {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+.about-text p {
+  font-size: 0.938rem;
+  margin: 0.5rem 0 1.4rem;
+}
+
+
+
+
+.feedback{
+    width: 100%;   
+    min-height: 100vh;
+}
+/* ///// inputs /////*/
+
+
+
+.styled-input {
+    float: left;  /*centerd texts look so ugly thats why*/
+    width: 293px;
+    margin: 16px 0; 
+    position: relative;
+    border-radius: 4px;
+}
+
+
+
+.styled-input label {
+    color: #fff;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: var(--navbar-textarea);
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+
+.submit-btn {
+    float: none;
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
+    background-color: var(--second-color);
+}
+
+
